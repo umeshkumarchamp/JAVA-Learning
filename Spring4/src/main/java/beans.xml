@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+    
+    <context:annotation-config/>
+    
+    
+    <bean class="app.main.Spring2.Address" id="add1">
+    <property name="city" value="Ranchi"/>
+    <property name="pinCode" value="834001"/>
+    <property name="state" value="Jharkhand"/>
+    </bean>
+    
+    
+    
+    
+	<bean id="emp1" class="app.main.Spring2.Employee">
+	<property name="empId" value="10"/>
+	<property name="empName" value="Subham"/>
+	<property name="address" ref="add1"></property>
+	</bean>
+	<!--  Constructor -->
+	<bean id="emp2" class="app.main.Spring2.Employee">
+		<constructor-arg name="empId" value="11"/>
+		<constructor-arg  name="empName" type="java.lang.String" index="1" value="Prasad"/>	
+	</bean>
+	
+	
+	
+	<bean id="std1" class="app.main.Spring2.Standard">
+	<property name="department" value= "Btech" />
+	<property name="branch" value= "CSE" />
+	  <property name="semester" value= "VIII" />
+	</bean>
+	<!-- <bean id="std2" class="app.main.Spring2.Standard">
+	<constructor-arg name="department" value="BTech" />
+	<constructor-arg name="branch" value="EEE" />
+	<constructor-arg name="semester" value="VII" />
+	</bean>
+	
+	<bean id="std3" class="app.main.Spring2.Standard">
+	<constructor-arg type="java.lang.String" value="BTech" />
+	<constructor-arg type="java.lang.String" value="ECE" />
+	<constructor-arg type="java.lang.String" value="V" />
+	</bean>
+	
+	<bean id="std4" class="app.main.Spring2.Standard">
+	<constructor-arg index ="0" value="BTech" />
+	<constructor-arg index ="1" value="ME" />
+	<constructor-arg index ="2" value="VIII" />
+	</bean> 
+	
+	 -->
+	
+	<!--  Setter Injection -->
+	<bean  id="stu1" class="app.main.Spring2.Student" >
+	<property name="sid" value="101"/>
+	<property name="sname" value="Student1"/>
+	<!-- <property name="std" ref="std1" /> -->
+	</bean>
+	
+	<!-- Constructor Injection -->
+	<!-- 
+	<bean id="stu2" class="app.main.Spring2.Student">
+	<constructor-arg name="sid" value="102"/>
+	<constructor-arg name="sname" value="Student2"/>
+	<constructor-arg name="std" ref="std2" />
+	</bean>
+	<bean id="stu3" class="app.main.Spring2.Student">
+	<constructor-arg type="int" value="103"/>
+	<constructor-arg type="java.lang.String" value="Student3"/>
+	<constructor-arg type="app.main.Spring2.Standard" ref="std3" />
+	</bean>
+	<bean id="stu4" class="app.main.Spring2.Student">
+	<constructor-arg index="0" value="104"/>
+	<constructor-arg index="1" value="Student4"/>
+	 <constructor-arg index="2" ref="std4" />
+	</bean>  -->
+	
+	
+	
+</beans>

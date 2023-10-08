@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here 
+	
+	
+	<bean class="app.Address" id="add1">
+
+		<property name="city" value="Ranchi" />
+		<property name="pincode" value="825102" />
+		<property name="state" value="Jharkhand" />
+		<property name="address" ref="add1" />
+	</bean>
+-->
+	<!--  Setter Injection -->
+	<bean id="emp1" class="app.Employee">
+
+		<property name="emp_id" value="10" />
+		<property name="emp_name" value="Subham" />
+
+	</bean>
+	
+	<!--  Setter Constructor -->
+	<bean id="emp2" class="app.Employee">
+		<constructor-arg value="11" />
+		<constructor-arg value="Umesh" />
+	</bean>
+
+</beans>
